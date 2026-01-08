@@ -1,0 +1,112 @@
+header {
+  background: var(--header-gradient);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  color: var(--card);
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo h3 {
+  font-size: 1.5rem;
+}
+.logo small {
+  background: hsl(from var(--accent) h s l / 0.35);
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  border: 0.2px solid var(--accent);
+  transition: var(--fast-trans);
+
+  &:hover,
+  &:focus {
+    background: hsl(from var(--primary) h s l / 0.9);
+    border-color: transparent;
+  }
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.options__bell,
+.options__logOut {
+  background: transparent;
+  padding: 0.6rem 0.7rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--fast-trans);
+}
+
+.options__bell:hover,
+.options__logOut:hover {
+  background: hsl(from var(--secondary) h s l / 0.125);
+}
+
+.options__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.options__info small {
+  font-size: 0.85rem;
+}
+
+.options__info--user {
+  background: hsl(from var(--secondary) h s l / 0.25);
+  padding: 0.6rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--fast-trans);
+  opacity: 0.9;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+  .options {
+    gap: 0.754rem;
+  }
+  .options__info--user + div {
+    display: none;
+  }
+  .options__bell,
+  .options__logOut * {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .actionCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1441px) {
+  .actionCards {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3rem;
+  }
+}
